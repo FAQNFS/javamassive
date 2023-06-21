@@ -1,11 +1,12 @@
 package ru.netology.stats;
+
 public class StatsServise {
 
 
     public long sumOfAllSales(long[] sales) {
         long totalSale = 0;
         for (long sale : sales) {
-           totalSale += sale;
+            totalSale += sale;
         }
         return totalSale;
     }
@@ -43,8 +44,9 @@ public class StatsServise {
 
     public int monthBelowAverageSales(long[] sales) {
         int counter = 0;
+        long averageSale = averageSum(sales);
         for (long sale : sales) {
-            if (sale < averageSum(sales)) {
+            if (sale < averageSale) {
                 counter++;
             }
         }
@@ -53,14 +55,15 @@ public class StatsServise {
 
     public int monthAboveAverageSales(long[] sales) {
         int counter = 0;
+        long averageSale = averageSum(sales);
         for (long sale : sales) {
-            if (sale > averageSum(sales)) {
+            if (sale > averageSale) {
                 counter++;
             }
         }
         return counter;
     }
 
-    }
+}
 
 
